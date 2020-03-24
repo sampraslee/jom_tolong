@@ -8,10 +8,14 @@
 <body>
     <h1>Index</h1>
     <% @initiatives.each do |initiative| %>
-        <h3><%= initiative.name %></h3>
-        <p><%= initiative.help_type %></p>
-        <p><%= initiative.link %></p>
-        <p><%= initiative.description %></p>
+        <div class="card">
+            <div class="card-img">
+            </div>
+            <div class="card-copy">
+                <h3 class='card-heading'><%= initiative.name %></h3>
+                <a class='card-link' href="<% initiative.link %>">Go</a>
+            </div>
+        </div>
     <% end %>
 </body>
 </html>
