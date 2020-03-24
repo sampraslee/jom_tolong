@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jom tolong</title>
+</head>
+<body>
+    <h1>Index</h1>
+    <% @initiatives.each do |initiative| %>
+        <h3><%= initiative.name %></h3>
+        <p><%= initiative.help_type %></p>
+        <p><%= initiative.link %></p>
+        <p><%= initiative.description %></p>
+    <% end %>
+</body>
+</html>
