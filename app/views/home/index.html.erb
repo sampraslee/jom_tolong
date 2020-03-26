@@ -7,13 +7,14 @@
 </head>
 <body>
     <h1>Index</h1>
+    <a><%= link_to 'I need help', new_persons_in_need_path %></a>
     <% @initiatives.each do |initiative| %>
         <div class="card">
             <div class="card-img">
             </div>
             <div class="card-copy">
                 <h3 class='card-heading'><%= initiative.name %></h3>
-                <a class='card-link' href="<% initiative.link %>">Go</a>
+                <a class='card-link' href="<%= initiative.link %>" target='_blank'>Go</a>
             </div>
         </div>
     <% end %>
