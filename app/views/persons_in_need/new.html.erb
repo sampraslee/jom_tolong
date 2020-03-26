@@ -1,0 +1,14 @@
+<h3>Fill in your information</h3>
+
+<%= form_with model: @person_in_need do |form| %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name%>
+    <br>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name%>
+    <br>
+    <%= form.label :phone_number %>
+    <%= form.phone_field :phone_number %>
+    <br>
+    <%= form.label :state %>
+<% end %>
