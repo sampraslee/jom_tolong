@@ -12,4 +12,6 @@
     <br>
     <%= form.label :state %>
     <%= form.grouped_collection_select :district_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+    <br>
+    <%= form.label 'What kind of help do you need?'%>
 <% end %>
