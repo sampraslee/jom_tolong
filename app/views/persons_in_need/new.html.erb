@@ -8,8 +8,8 @@
     <%= form.phone_field :phone_number %>
     <br>
     <%= form.fields_for :helps do |help_form| %>
-        <%= form.label :district %>
-        <%= form.grouped_collection_select :district, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+        <%= help_form.label :districts_id %>
+        <%= help_form.grouped_collection_select :districts_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
         <br>
         <%= help_form.label 'What kind of help do you need?' %>
         <%= help_form.select :help_type, options_for_select(Help.help_types.keys), include_blank: true %>

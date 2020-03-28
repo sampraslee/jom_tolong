@@ -7,7 +7,6 @@ class PersonsInNeedController < ApplicationController
     def create
         @person_in_need = PersonInNeed.create!(person_in_need_params)
         @person_in_need.helps.first.person_in_need_id = @person_in_need.id
-        byebug
         if @person_in_need.save
           redirect_to root_path 
         else
@@ -18,6 +17,6 @@ class PersonsInNeedController < ApplicationController
     private
 
     def person_in_need_params
-      params.require(:person_in_need).permit(:name, :phone_number, helps_attributes: [:help_type, :description, :ditrict])
+      params.require(:person_in_need).permit(:name, :phone_number, helps_attributes: [:help_type, :description, :districts_id])
     end
 end
