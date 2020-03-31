@@ -1,17 +1,21 @@
 <h3>Fill in your information</h3>
 
-<%= form_with model: @person_in_need do |form| %>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name%>
-    <br>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name%>
+<%= form_with model: @person_in_need, url: persons_in_need_index_path do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
     <br>
     <%= form.label :phone_number %>
-    <%= form.phone_field :phone_number %>
+    <%= form.text_field :phone_number %>
     <br>
-    <%= form.label :state %>
-    <%= form.grouped_collection_select :district_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
-    <br>
-    <%= form.label 'What kind of help do you need?'%>
+    <%= form.fields_for :helps do |help_form| %>
+        <%= help_form.label :district_id %>
+        <%= help_form.grouped_collection_select :district_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+        <br>
+        <%= help_form.label 'What kind of help do you need?' %>
+        <%= help_form.select :help_type, options_for_select(Help.help_types.keys), include_blank: true %>
+        <br>
+        <%= help_form.label 'Describe' %>
+        <%= help_form.text_area :description %>
+    <% end %>
+    <%= form.submit 'Post' %>
 <% end %>

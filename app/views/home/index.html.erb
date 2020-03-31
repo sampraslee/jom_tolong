@@ -8,6 +8,15 @@
 <body>
     <h1>Index</h1>
     <a><%= link_to 'I need help', new_persons_in_need_path %></a>
+    <% @persons_in_need.each do |person| %>
+        <div class="card">
+            <div class="card-img"></div>
+            <div class="card-copy">
+                <h3 class="card-heading"><%= person.name %></h3>
+                <p><%= person.phone_number %></p>
+            </div>
+        </div>
+    <% end %>
     <% @initiatives.each do |initiative| %>
         <div class="card">
             <div class="card-img">
