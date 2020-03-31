@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_03_30_065201) do
     t.bigint "person_in_need_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "district_id"
+    t.bigint "district_id", null: false
     t.index ["district_id"], name: "index_helps_on_district_id"
     t.index ["person_in_need_id"], name: "index_helps_on_person_in_need_id"
   end
