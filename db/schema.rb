@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_065201) do
+ActiveRecord::Schema.define(version: 2020_04_01_062941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 2020_03_30_065201) do
   create_table "helps", force: :cascade do |t|
     t.integer "help_type"
     t.text "description"
-    t.bigint "person_in_need_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "district_id", null: false
+    t.bigint "user_id", null: false
     t.index ["district_id"], name: "index_helps_on_district_id"
-    t.index ["person_in_need_id"], name: "index_helps_on_person_in_need_id"
+    t.index ["user_id"], name: "index_helps_on_user_id"
   end
 
   create_table "initiatives", force: :cascade do |t|
@@ -44,18 +44,19 @@ ActiveRecord::Schema.define(version: 2020_03_30_065201) do
     t.string "help_type"
   end
 
-  create_table "person_in_needs", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "helps", "districts"
+  add_foreign_key "helps", "users"
 end

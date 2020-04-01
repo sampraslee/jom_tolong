@@ -17,6 +17,8 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+# For phone number verification
+gem 'authy', '~> 2.7', '>= 2.7.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -42,6 +44,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # For rails console
   gem 'rb-readline', '~> 0.5.5'
+  gem 'pry-rails', '~> 0.3.9'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
