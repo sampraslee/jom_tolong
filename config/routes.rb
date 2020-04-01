@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :persons_in_need
+  resources :users
 end

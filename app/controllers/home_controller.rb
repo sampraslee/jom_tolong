@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
     def index
         @initiatives = Initiative.all
-        @persons_in_need = PersonInNeed.all
+        @users = User.all
     end
     
 end
