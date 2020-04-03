@@ -6,23 +6,43 @@
     <title>jom tolong</title>
 </head>
 <body>
-    <h1>Index</h1>
-    <a><%= link_to 'I need help', new_user_path %></a>
+    <header>
+        <p>Jom Tolong</p>
+    </header>
     
-    <% @users.each do |user| %>
-        <div class="card">
-            <div class="card-img"></div>
-            <div class="card-copy">
-                <h3 class="card-heading"><%= user.name %></h3>
-            </div>
+    <section id="hero">
+        <div class="hero-copy">
+            <h1 class='heading'>Help is needed</h1>
+            <p class='subheading'>Let's get help for those who need it</p>
         </div>
-    <% end %>
+        <div class="hero-links">
+            <a class="primary para">I need help</a>
+            <a class="secondary para">I can help</a>
+        </div>
+    </section>
+    
+    <section id="persons-in-need">
+        <h2 class='subheading'>People who need your help...</h2>
+        <% @users.each do |user| %>
+            <div class="card">
+                <div class="card-img">
+                </div>
+                <div class="card-text">
+                    <p class="tag"><%= user.helps.last.help_type %></p>         
+                    <p class="card-heading"><%= user.name %></p>
+                    <p class="card-subheading"><%= user.helps.last.district.name %>, <%= user.helps.last.district.state.name %></p>
+                    <p class="card-paragraph"><%= user.helps.last.description %></p>
+                </div>
+                <a href="" class="card-link card-paragraph">Help</a>
+            </div>
+        <% end %>
+    </section>
 
     <% @initiatives.each do |initiative| %>
         <div class="card">
             <div class="card-img">
             </div>
-            <div class="card-copy">
+            <div class="card-text">
                 <h3 class='card-heading'><%= initiative.name %></h3>
                 <a class='card-link' href="<%= initiative.link %>" target='_blank'>Go</a>
             </div>
