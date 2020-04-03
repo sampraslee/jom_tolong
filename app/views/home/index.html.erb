@@ -16,7 +16,7 @@
             <p class='subheading'>Let's get help for those who need it</p>
         </div>
         <div class="hero-links">
-            <a class="primary para">I need help</a>
+            <%= link_to 'I need help', new_user_path, class: "primary para" %>
             <a class="secondary para">I can help</a>
         </div>
     </section>
@@ -33,7 +33,7 @@
                     <p class="card-subheading"><%= user.helps.last.district.name %>, <%= user.helps.last.district.state.name %></p>
                     <p class="card-paragraph"><%= user.helps.last.description %></p>
                 </div>
-                <a href="" class="card-link card-paragraph">Help</a>
+                <a class="card-link">Help</a>
             </div>
         <% end %>
     </section>

@@ -1,3 +1,57 @@
 // Place all the styles related to the PersonsInNeed controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// new.html.erb
+form {
+	padding: 0.75em;
+}
+
+label {
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	margin-top: 1.5em;
+	margin-bottom: 0.2em;
+}
+
+input[type=text],
+textarea,
+select {
+	width: 100%;
+	border-radius: 5px;
+	padding: 1em;
+	border: 1px solid #acacac;
+}
+
+input[type=text]:focus,
+textarea:focus,
+select:focus {
+	border: 3px solid #ff8e3c;
+}
+
+input[type=submit] {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: 1.5em;
+	padding: 1em;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--yellow);
+	font-weight: bold;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	background: url('http://www.free-icons-download.net/images/small-down-arrow-icon-15593.png');
+	background-repeat: no-repeat;
+	background-size: 16px 17px;
+	background-position: right;
+	background-origin: content-box;
+}
