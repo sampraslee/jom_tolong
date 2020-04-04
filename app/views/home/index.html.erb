@@ -38,15 +38,18 @@
         <% end %>
     </section>
 
-    <% @initiatives.each do |initiative| %>
-        <div class="card">
-            <div class="card-img">
+    <section id="initiatives">
+        <h2 class='subheading'>Initiatives who need your help...</h2>
+        <% @initiatives.each do |initiative| %>
+            <div class="card">
+                <div class="card-img">
+                </div>
+                <div class="card-text">
+                    <p class='card-heading'><%= initiative.name %></p>
+                </div>
+                <%= link_to 'Help', initiative.link, class: 'card-link' %>
             </div>
-            <div class="card-text">
-                <h3 class='card-heading'><%= initiative.name %></h3>
-                <a class='card-link' href="<%= initiative.link %>" target='_blank'>Go</a>
-            </div>
-        </div>
-    <% end %>
+        <% end %>
+    </section>
 </body>
 </html>
