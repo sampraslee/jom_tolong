@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
+
+  get 'show', to: 'users#show', as: 'show'
+  put 'update', to: 'users#update', as: 'update'
 end

@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_122107) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "verified"
+    t.boolean "verified", default: false
   end
 
   add_foreign_key "helps", "districts"

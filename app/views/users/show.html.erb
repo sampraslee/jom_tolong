@@ -6,10 +6,10 @@
     <title>Show</title>
 </head>
 <body>
-    <%= form_with model: user do |form| %>
-    <%= form.label :code %>
-    <%= form.text_field :code %>
-    <%= form.submit 'Verify' %>
+    <%= form_with model: @user do |form| %>
+        <%= form.label :code %>
+        <%= form.text_field :code %>
+        <%= form.submit 'Verify', url: update_path(@user) %>
     <% end %>
 </body>
 </html>
