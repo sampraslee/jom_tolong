@@ -15,7 +15,16 @@
 
     <%= javascript_include_tag 'https://unpkg.com/swiper/js/swiper.min.js' %>
     <script>
-        var mySwiper = new Swiper ('.swiper-container', {
+        var swiper1 = new Swiper ('.swiper1', {
+            direction: 'horizontal',
+            loop: 'true',
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        })
+
+        var swiper2 = new Swiper ('.swiper2', {
             direction: 'horizontal',
             loop: 'true',
             navigation: {
