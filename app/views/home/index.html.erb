@@ -27,6 +27,9 @@
             <%= form.label 'with' %>
             <%= form.select :helps_search, options_for_select(Help.help_types.keys), include_blank: true %>
 
+            <%= form.label 'area'%>
+            <%= form.grouped_collection_select :districts_search, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+
             <%= form.submit 'Filter' %>
         <% end %>
     </section>
