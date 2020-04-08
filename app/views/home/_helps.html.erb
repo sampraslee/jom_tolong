@@ -1,14 +1,14 @@
 <div class="swiper-container swiper1">
     <div class="swiper-wrapper">
-        <% @users.each do |user| %>
+        <% @helps.each do |help| %>
             <div class="swiper-slide">
                 <div class="card">
                     <div class="card-img"></div>
                     <div class="card-text">
-                        <p class="tag"><%= user.helps.last.help_type %></p>         
-                        <p class="card-heading"><%= user.name %></p>
-                        <p class="card-subheading"><%= user.helps.last.district.name %>, <%= user.helps.last.district.state.name %></p>
-                        <p class="card-paragraph"><%= user.helps.last.description %></p>
+                        <p class="tag"><%= help.help_type %></p>         
+                        <p class="card-heading"><%= help.user.name %></p>
+                        <p class="card-subheading"><%= help.district.name %>, <%= help.district.state.name %></p>
+                        <p class="card-paragraph"><%= help.description %></p>
                     </div>
                     <a class="card-link">Help</a>
                 </div>
