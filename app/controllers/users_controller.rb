@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       if valid_phone_number?(+60,user_params['phone_number'])
         @user.save
         session[:user_id] = @user.id
-        redirect_to show_path
+        redirect_to edit_user_path(@user.id)
       else
         render 'new'
       end
@@ -21,8 +21,11 @@ class UsersController < ApplicationController
       @user = current_user
     end
     
+    def edit
+      @user = current_user
+    end
+    
     def update
-      byebug
       @user = current_user
       if valid_confirmation_code?(code_params["code"], +60, @user.phone_number)
         @user.update(verified: true)

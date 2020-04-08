@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
     def index
-        byebug
         @helps =
         if (params[:helps_search] != "" && params[:helps_search] != nil) && (params[:districts_search] != "" && params[:districts_search] != nil)
             Help.where({help_type: params[:helps_search]} && {district_id: params[:districts_search]})
