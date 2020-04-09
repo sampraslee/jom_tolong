@@ -13,15 +13,16 @@
  *= require_tree .
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
 
 /* Variables */
 :root {
 	/* Colors */
 	--yellow: #ffd803;
 	/* Fonts */
-	--heading: 36px;
-	--subheading: 20px;
+	--heading: 32px;
+	--subheading: 18px;
 	--paragraph: 16px;
 	--card-heading: 1.6rem;
 	--card-subheading: 16px;
@@ -38,29 +39,31 @@
 body,
 h1,
 h3,
+label,
 p {
 	margin: 0;
 }
 
 body {
 	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+	/* line-height: 1.5; */
 	letter-spacing: 0.5px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Asap', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
 	background: #fffffe;
+}
+
+a {
+	text-decoration: none;
 }
 
 button {
 	font-family: inherit;
 }
 
-section {
-	padding: 1.5rem;
-}
-
 .heading {
 	font-size: var(--heading);
-	font-weight: 700;
+	font-weight: 400;
 }
 .subheading {
 	font-size: var(--subheading);
@@ -68,17 +71,21 @@ section {
 .para {
 	font-size: var(--paragraph);
 }
+
+#filter,
+#help-section,
+#initiatives {
+	padding: 1em;
+}
 /* Navbar */
 header {
 	height: 35px;
 }
 
 /* Buttons */
-a {
-	text-decoration: none;
-}
 .primary,
 .secondary {
+	font: inherit;
 	color: #272343;
 	padding: 0.7rem;
 	border-radius: 5px;
@@ -155,4 +162,24 @@ a {
 	font-size: var(--card-paragraph);
 	color: #2a2a2a;
 	margin: 1em 0;
+}
+
+/* Media Queries */
+@media (min-width: 360px) {
+	:root {
+		--heading: 40px;
+	}
+}
+
+@media (min-width: 768px) {
+	:root {
+		--heading: 65px;
+		--subheading: 32px;
+		--paragraph: 20px;
+	}
+
+	.primary,
+	.secondary {
+		padding: 1em;
+	}
 }

@@ -12,23 +12,27 @@
     
     <section id="hero">
         <div class="hero-copy">
-            <h1 class='heading'>Help is needed</h1>
-            <p class='subheading'>Let's get help for those who need it</p>
+            <h1 class="heading">Help is needed.</h1>
+            <div class="subheading">Let's help those who need it.</div>
         </div>
         <div class="hero-links">
-            <%= link_to 'I need help', new_user_path, class: "primary para" %>
-            <a class="secondary para">I can help</a>
+            <%= link_to 'I need help', new_user_path, class: "primary paragraph" %>
+            <a class="secondary paragraph">I can help</a>
         </div>
     </section>
     
     <section id="filter">
         <h2 class="subheading">I can help</h2>
         <%= form_with url: root_path, method: 'GET' do |form| %>
-            <%= form.label 'with' %>
-            <%= form.select :helps_search, options_for_select(Help.help_types.keys), include_blank: true %>
+            <div class="with">
+                <%= form.label 'with', class: 'paragraph' %>
+                <%= form.select :helps_search, options_for_select(Help.help_types.keys), include_blank: true %>
+            </div>
 
-            <%= form.label 'area'%>
-            <%= form.grouped_collection_select :districts_search, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+            <div class="area">
+                <%= form.label 'area', class: 'paragraph' %>
+                <%= form.grouped_collection_select :districts_search, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+            </div>
 
             <%= form.submit 'Filter' %>
         <% end %>

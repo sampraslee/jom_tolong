@@ -3,33 +3,64 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 #hero {
-	display: grid;
+	display: flex;
+	justify-content: center;
 	align-items: center;
-	height: 50vh;
+	flex-direction: column;
+	height: 45vh;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.8);
 	background-image: url(/assets/hero-img.jpg);
+	background-position: center;
 	background-size: cover;
-	background-blend-mode: lighten;
+	background-blend-mode: overlay;
 
-	.subheading {
-		margin-top: 0.5rem;
+	.hero-copy {
+		line-height: 1.3;
 	}
 
-	.primary {
-		margin-right: 1rem;
-	}
-
-	.secondary {
-		color: var(--yellow);
-	}
-
-	button {
-		font-size: var(--paragraph);
+	.hero-links {
+		margin-top: 2em;
+		.primary {
+			margin-right: 1em;
+		}
 	}
 }
 
-#persons-in-need {
-	min-height: 100vh;
-	background-color: #eff0f3;
+#filter {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		display: inline;
+		margin-right: 1.2em;
+	}
+
+	.with {
+		margin-bottom: 1em;
+	}
+
+	#helps_search,
+	#districts_search {
+		width: 60%;
+	}
+}
+@media (min-width: 768px) {
+	#hero {
+		height: 35vh;
+
+		.hero-links {
+			margin-top: 3em;
+		}
+	}
+}
+@media (min-width: 992px) {
+	#hero {
+		height: 30vh;
+	}
+}
+@media (min-width: 1200px) {
+	#hero {
+		height: 40vh;
+	}
 }
