@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>help</title>
+</head>
+<body>
+    <h3 class="heading"><%= @help.user.name %></h3>
+    <p class="subheading"><%= @help.district.name %>, <%= @help.district.state.name %></p>
+    <p class="paragraph"><%= @help.description %></p>
+    <%= link_to 'Contact', "https://wa.me/60#{@help.user.phone_number}", target: "_blank", class: "primary" %>
+</body>
+</html>

@@ -10,7 +10,7 @@
                         <p class="card-subheading"><%= help.district.name %>, <%= help.district.state.name %></p>
                         <p class="card-paragraph"><%= help.description %></p>
                     </div>
-                    <a class="card-link">Help</a>
+                    <%= link_to 'Help', helps_show_path(help), class: 'card-link' %>
                 </div>
             </div>
         <% end %>
