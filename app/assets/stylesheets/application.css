@@ -19,7 +19,12 @@
 /* Variables */
 :root {
 	/* Colors */
-	--yellow: #ffd803;
+	--cta-color: #ffd803;
+	--bg: #fffffe;
+	--card-headline-color: #00214d;
+	--card-paragraph-color: #1b2d45;
+	--card-highlight: #ff5470;
+	--card-bg: #f2f4f6;
 	/* Fonts */
 	--heading: 32px;
 	--subheading: 18px;
@@ -27,6 +32,8 @@
 	--card-heading: 1.6rem;
 	--card-subheading: 16px;
 	--card-paragraph: 1.1rem;
+	/* Measurements */
+	--border-radius: 5px;
 }
 
 /* CSS reset */
@@ -51,7 +58,7 @@ body {
 	letter-spacing: 0.5px;
 	font-family: 'Asap', sans-serif;
 	/* font-family: 'Roboto', sans-serif; */
-	background: #fffffe;
+	background: var(--bg);
 }
 
 a {
