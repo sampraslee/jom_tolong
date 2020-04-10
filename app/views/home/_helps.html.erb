@@ -3,7 +3,7 @@
         <% @helps.each do |help| %>
             <div class="swiper-slide">
                 <div class="card">
-                    <div class="card-img"></div>
+                    <%# <div class="card-img"></div> %>
                     <div class="card-text">
                         <p class="tag"><%= help.help_type %></p>         
                         <p class="card-heading"><%= help.user.name %></p>
@@ -17,4 +17,5 @@
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
 </div>
