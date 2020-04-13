@@ -29,6 +29,12 @@
 			margin-right: 1em;
 		}
 	}
+
+	.photo-credit {
+		font-size: 0.5rem;
+		font-style: italic;
+		margin-top: 1rem;
+	}
 }
 
 #filter {
@@ -54,6 +60,9 @@
 		.with,
 		.area {
 			text-align: center;
+			label {
+				color: var(--card-headline-color);
+			}
 		}
 		.with {
 			margin-bottom: 1em;
@@ -141,14 +150,6 @@
 			grid-row: 2/-1;
 		}
 	}
-
-	// .swiper-button-prev,
-	// .swiper-button-next {
-	// 	top: 75% !important;
-	// }
-	// .swiper-pagination {
-	// 	bottom: 23% !important;
-	// }
 }
 
 @media screen and (min-width: 600px) {

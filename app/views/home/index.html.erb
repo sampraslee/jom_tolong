@@ -13,12 +13,13 @@
     <section id="hero">
         <div class="hero-copy">
             <h1 class="heading">Help is needed.</h1>
-            <div class="subheading">Let's help those who need it.</div>
+            <div class="subheading">Let's connect those who need help to those who can help</div>
         </div>
         <div class="hero-links">
             <%= link_to 'I need help', new_user_path, class: "primary paragraph" %>
             <a class="secondary paragraph">I can help</a>
         </div>
+        <div class="photo-credit">Photo by <a href="https://www.pexels.com/@ihsanaditya?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Ihsan Aditya</a> from <a href="https://www.pexels.com/photo/flag-of-malaysia-3011004/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Pexels</a></div>
     </section>
     
     <section id="filter">
@@ -51,5 +52,9 @@
             <%= render partial: 'initiatives' %>
         </div>
     </section>
+
+    <footer>
+        <div class="logo">Jom bantu</div>
+    </footer>
 </body>
 </html>
