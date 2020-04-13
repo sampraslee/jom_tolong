@@ -6,10 +6,19 @@
     <title>Edit</title>
 </head>
 <body>
+    <header>
+        <img src="/assets/logo.png" alt="logo" class="logo">
+    </header>
     <%= form_with model: @user do |form| %>
+    <h3>Enter your verification code</h3>
+    <p>A verification code will be sent to you shortly.</p>
         <%= form.label :code %>
         <%= form.text_field :code %>
         <%= form.submit 'Verify', url: update_path(@user) %>
     <% end %>
+
+    <footer>
+        <img src="/assets/logo.png" alt="logo" class="logo">
+    </footer>
 </body>
 </html>

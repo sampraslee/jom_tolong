@@ -10,7 +10,7 @@
                         <p class="card-subheading"><%= help.district.name %>, <%= help.district.state.name %></p>
                         <p class="card-paragraph"><%= help.description %></p>
                     </div>
-                    <%= link_to 'Help', helps_show_path(help), class: 'card-link' %>
+                    <%= link_to 'Help', "https://wa.me/60#{help.user.phone_number}", target: "_blank", class: "card-link" %>
                 </div>
             </div>
         <% end %>
