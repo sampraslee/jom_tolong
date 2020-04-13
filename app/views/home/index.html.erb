@@ -32,7 +32,7 @@
 
             <div class="area">
                 <%= form.label 'area', class: 'paragraph' %>
-                <%= form.grouped_collection_select :districts_search, @states, :districts, :name, :id, :name, include_blank: true %>
+                <%= form.grouped_collection_select :districts_search, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
             </div>
 
             <%= form.submit 'Filter' %>
