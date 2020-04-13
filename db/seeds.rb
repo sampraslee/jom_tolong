@@ -2,20 +2,20 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 initiatives_arr = [
-    {name: 'CAREMongering Malaysia', help_type: 'volunteer', link: 'https://www.facebook.com/groups/653716671867349', location: 'Kuala Lumpur', image: ''},
-    {name: 'Mercy Malaysia', help_type: 'finance', link: 'https://www.launchgood.com/campaign/covid19_emergency_relief_fund_for_vulnerable_communities_in_malaysia#!/', location: 'Kuala Lumpur', image: ''},
-    {name: 'NGOhub', help_type: 'finance', link: 'https://www.ngohub.asia/campaigns/COVIDfund', location: 'All Malaysia', image: ''},
-    {name: 'FV for Covid19', help_type: 'finance', link: 'https://kitafund.com/7541-fv-for-covid19-support-fund', location: 'All Malaysia', image: ''},
-    {name: 'Tabung Covid19: Bantu Jiran Kita', help_type: 'finance', link: 'https://kitafund.com/7524-tabung-covid-19-bantu-jiran-kita', location: 'Kuala Lumpur, Kelantan, Melaka, Negeri Sembilan, Selangor', image: ''},
-    {name: 'Mercy Malaysia - Call for Medical Volunteers', help_type: 'volunteer', link: 'https://twitter.com/MERCYMalaysia/status/1240292031815200768', location: 'All Malaysia', image: ''},
-    {name: 'Petronita', help_type: 'finance', link: 'https://www.facebook.com/petronita.kl/posts/1482165491944215', location: 'All Malaysia', image: ''},
-    {name: 'The Lost Food Project', help_type: 'volunteer', link: 'https://www.facebook.com/petronita.kl/posts/1482165491944215', location: 'All Malaysia', image: ''},
-    {name: 'Covid19 & Refugees in Malaysia', help_type: 'finance', link: 'https://twitter.com/supernowoczesna/status/1239492501372694528?s=21', location: 'Perak', image: ''},
-    {name: '#MakanKongsi', help_type: 'finance', link: 'https://www.facebook.com/155060824694541/posts/1301960240004588/', location: 'Johor Bahru', image: ''}
+    {name: 'CAREMongering Malaysia', link: 'https://www.facebook.com/groups/653716671867349', location: 'Kuala Lumpur', description: 'Looking for youth volunteers to help the elderly (at most risk from COVID19) to run daily errands to minimize infection risk.', help_needed: 'volunteer'},
+    {name: 'Mercy Malaysia', link: 'https://www.launchgood.com/campaign/covid19_emergency_relief_fund_for_vulnerable_communities_in_malaysia#!/', location: 'Kuala Lumpur', description: 'Fundraising to protect vulnerable communities in Malaysia.', help_needed: 'financial'},
+    {name: 'NGOhub', link: 'https://www.ngohub.asia/campaigns/COVIDfund', location: 'All Malaysia', description: ' Fundraising to fund 16 NGOs so they can continue to serve our most vulnerable communities.', help_needed: 'financial'},
+    {name: 'FV for Covid19', link: 'https://kitafund.com/7541-fv-for-covid19-support-fund', location: 'All Malaysia', description: 'We are aiming to raise RM500,000 via Kitafund to help aid as many frontliners as possible, in their efforts to save and protect Malaysians.', help_needed: 'financial'},
+    {name: 'Tabung Covid19: Bantu Jiran Kita', link: 'https://kitafund.com/7524-tabung-covid-19-bantu-jiran-kita', location: 'Kuala Lumpur, Kelantan, Melaka, Negeri Sembilan, Selangor', description: 'Fundraising to buy staple food for vulnerable families.', help_needed: 'financial'},
+    {name: 'Mercy Malaysia - Call for Medical Volunteers', link: 'https://twitter.com/MERCYMalaysia/status/1240292031815200768', location: 'All Malaysia', description: 'Requires medical volunteers to work with a consortium of NGOs.', help_needed: 'volunteer'},
+    {name: 'Petronita', link: 'https://www.facebook.com/petronita.kl/posts/1482165491944215', location: 'All Malaysia', description: 'Fundraising to buy basic items and medical equipment.', help_needed: 'financial'},
+    {name: 'The Lost Food Project', link: 'https://www.facebook.com/petronita.kl/posts/1482165491944215', location: 'All Malaysia', description: 'Fundraising and collecting food to support charities and vulnerable members of society.', help_needed: 'financial'},
+    {name: 'Covid19 & Refugees in Malaysia', link: 'https://twitter.com/supernowoczesna/status/1239492501372694528?s=21', location: 'Perak', description: 'Fundraising to support four vulnerable Rohingya families in Perak. All funds raised will go towards food, rent and protection measures such as hand sanitiser.', help_needed: 'financial'},
+    {name: '#MakanKongsi', link: 'https://www.facebook.com/155060824694541/posts/1301960240004588/', location: 'Johor Bahru', description: 'Fundraising to feed 2,000 vulnerable persons for two weeks in Johor, Selangor, Pahang, and Penang. The MakanKongsi intiative will be executed with Caremongering Penang and Persatuan Wanita Selangor.', help_needed: 'financial'}
 ]
 
-initiatives_arr.each do |initiatives|
-    initiative = Initiative.create(name: initiatives[:name], help_type: initiatives[:help_type], link: initiatives[:link], location: initiatives[:location])
+initiatives_arr.each do |initiative|
+    initiative = Initiative.create(name: initiative[:name], link: initiative[:link], location: initiative[:location], help_needed: initiative[:help_needed], description: initiative[:description])
 end
 
 states_districts = [
@@ -42,3 +42,4 @@ states_districts.each do |state_district|
         new_district = District.create(name: district, state: state)
     end
 end
+

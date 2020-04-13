@@ -7,7 +7,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 45vh;
+	height: 40vh;
 	text-align: center;
 	background-color: rgba(186, 232, 232, 0.95);
 	background-image: url(/assets/hero-img.jpg);
@@ -32,7 +32,7 @@
 }
 
 #filter {
-	background-color: var(--bg-2);
+	background-color: var(--bg);
 	padding: 1.2em;
 
 	.subheading {
@@ -40,12 +40,16 @@
 		margin-bottom: 1em;
 	}
 	form {
-		background-color: var(--bg);
+		background-color: var(--card-bg);
 		padding: 1em;
 		border-radius: var(--border-radius);
+		box-shadow: 5px 5px 10px #e0e0e0;
 		label {
 			display: inline;
 			margin-right: 1.2em;
+		}
+		select {
+			background-color: var(--bg);
 		}
 		.with,
 		.area {
@@ -68,14 +72,18 @@
 		height: 90%;
 
 		.swiper-container {
-			height: 100%;
+			height: 95%;
 		}
 	}
 }
+
 #help-section,
 #initiatives {
+	margin-top: 1rem;
+
 	.subheading {
-		margin: 2em;
+		margin-left: 2em;
+		margin-bottom: 1em;
 	}
 
 	.card {
@@ -91,13 +99,13 @@
 			.card-heading {
 				font-size: var(--card-heading);
 				font-weight: bold;
-				color: var(--card-heading-color);
+				color: var(--card-headline-color);
 			}
 			.tag {
 				display: inline-block;
 				padding: 5px 10px;
 				margin: 0.75em 0;
-				background-color: var(--bg);
+				background-color: #bae8e8;
 				border-radius: var(--border-radius);
 			}
 			.card-subheading {
@@ -119,13 +127,28 @@
 			font-weight: bold;
 		}
 	}
-	.swiper-button-prev,
-	.swiper-button-next {
-		top: 75% !important;
+
+	.swiper-container {
+		display: grid;
+		grid-template-rows: 1fr 50px;
+
+		.swiper-wrapper {
+			grid-row: 1/2;
+		}
+		.swiper-button-prev,
+		.swiper-button-next,
+		.swiper-pagination {
+			grid-row: 2/-1;
+		}
 	}
-	.swiper-pagination {
-		bottom: 23% !important;
-	}
+
+	// .swiper-button-prev,
+	// .swiper-button-next {
+	// 	top: 75% !important;
+	// }
+	// .swiper-pagination {
+	// 	bottom: 23% !important;
+	// }
 }
 
 @media screen and (min-width: 600px) {
@@ -143,5 +166,52 @@
 		}
 	}
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 767px) {
+	#help-section,
+	#initiatives {
+		height: 52vh;
+
+		.card {
+			width: 290px;
+			height: min-content;
+		}
+		.swiper-button-prev,
+		.swiper-button-next {
+			top: 25% !important;
+		}
+		.swiper-pagination {
+			bottom: 50% !important;
+		}
+	}
+}
+@media screen and (min-width: 992px) {
+	#hero {
+		height: 25vh;
+	}
+
+	#help-section,
+	#initiatives {
+		height: 35vh;
+
+		.card {
+			width: 290px;
+			height: min-content;
+		}
+		.swiper-button-prev,
+		.swiper-button-next {
+			top: 42% !important;
+		}
+		.swiper-pagination {
+			bottom: 35% !important;
+		}
+	}
+}
+@media screen and (min-width: 1200px) {
+	#hero {
+		height: 45vh;
+	}
+	#help-section,
+	#initiatives {
+		height: 75vh;
+	}
 }

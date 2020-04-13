@@ -47,23 +47,8 @@
 
     <section id="initiatives">
         <h2 class='subheading'>Initiatives who need your help...</h2>
-        <div class="swiper-container swiper2">
-            <div class="swiper-wrapper">
-                <% @initiatives.each do |initiative| %>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card-img"></div>
-                            <div class="card-text">
-                                <p class='card-heading'><%= initiative.name %></p>
-                            </div>
-                            <%= link_to 'Help', initiative.link, class: 'card-link' %>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
+        <div id="initiatives-partial">
+            <%= render partial: 'initiatives' %>
         </div>
     </section>
 </body>

@@ -1,0 +1,20 @@
+<div class="swiper-container swiper2">
+    <div class="swiper-wrapper">
+        <% @initiatives.each do |initiative| %>
+            <div class="swiper-slide">
+                <div class="card">
+                    <%# <div class="card-img"></div> %>
+                    <div class="card-text">
+                        <p class='card-heading'><%= initiative.name %></p>
+                        <p class="tag"><%= initiative.help_needed %></p>
+                        <div class="card-paragraph"><%= initiative.description %></div>
+                    </div>
+                    <%= link_to 'Help', initiative.link, target: '_blank', class: 'card-link' %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+</div>
