@@ -6,27 +6,55 @@
     <title>jom tolong</title>
 </head>
 <body>
-    <h1>Index</h1>
-    <a><%= link_to 'I need help', new_user_path %></a>
+    <header>
+        <img src="/assets/logo.png" alt="logo" class="logo">
+    </header>
     
-    <% @users.each do |user| %>
-        <div class="card">
-            <div class="card-img"></div>
-            <div class="card-copy">
-                <h3 class="card-heading"><%= user.name %></h3>
-            </div>
+    <section id="hero">
+        <div class="hero-copy">
+            <h1 class="heading">Help is needed.</h1>
+            <div class="subheading">Let's connect those who need help to those who can help</div>
         </div>
-    <% end %>
+        <div class="hero-links">
+            <%= link_to 'I need help', new_user_path, class: "primary paragraph" %>
+            <a class="secondary paragraph">I can help</a>
+        </div>
+        <div class="photo-credit">Photo by <a href="https://www.pexels.com/@ihsanaditya?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Ihsan Aditya</a> from <a href="https://www.pexels.com/photo/flag-of-malaysia-3011004/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels">Pexels</a></div>
+    </section>
+    
+    <section id="filter">
+        <h2 class="subheading">I can help</h2>
+        <%= form_with url: root_path, method: 'GET' do |form| %>
+            <div class="with">
+                <%= form.label 'with', class: 'paragraph' %>
+                <%= form.select :helps_search, options_for_select(Help.help_types.keys), include_blank: true %>
+            </div>
 
-    <% @initiatives.each do |initiative| %>
-        <div class="card">
-            <div class="card-img">
+            <div class="area">
+                <%= form.label 'area', class: 'paragraph' %>
+                <%= form.grouped_collection_select :districts_search, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
             </div>
-            <div class="card-copy">
-                <h3 class='card-heading'><%= initiative.name %></h3>
-                <a class='card-link' href="<%= initiative.link %>" target='_blank'>Go</a>
-            </div>
+
+            <%= form.submit 'Filter' %>
+        <% end %>
+    </section>
+
+    <section id="help-section">
+        <h2 class='subheading'>People who need your help...</h2>
+        <div id="helps-partial">
+            <%= render partial: 'helps' %>
         </div>
-    <% end %>
+    </section>
+
+    <section id="initiatives">
+        <h2 class='subheading'>Initiatives who need your help...</h2>
+        <div id="initiatives-partial">
+            <%= render partial: 'initiatives' %>
+        </div>
+    </section>
+
+    <footer>
+        <img src="/assets/logo.png" alt="logo" class="logo">
+    </footer>
 </body>
 </html>

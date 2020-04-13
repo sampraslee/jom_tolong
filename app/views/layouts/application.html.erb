@@ -5,11 +5,67 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'https://unpkg.com/swiper/css/swiper.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
+
+    <%= javascript_include_tag 'https://unpkg.com/swiper/js/swiper.min.js' %>
+    <script>
+        var swiper1 = new Swiper ('.swiper1', {
+            direction: 'horizontal',
+            loop: 'false',
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+		          el: '.swiper-pagination'
+            },
+            breakpoints: {
+              767: {
+                slidesPerView: 3,
+                spaceBetween: 200
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 245
+              },
+              1200: {
+                slidesPerView: 5,
+                spaceBetween: 270
+              }
+            }
+        })
+
+        var swiper2 = new Swiper ('.swiper2', {
+            direction: 'horizontal',
+            loop: 'false',
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+		          el: '.swiper-pagination'
+            },
+            breakpoints: {
+              767: {
+                slidesPerView: 3,
+                spaceBetween: 200
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 245
+              },
+              1200: {
+                slidesPerView: 5,
+                spaceBetween: 270
+              }
+            }
+        })
+    </script>
   </body>
 </html>

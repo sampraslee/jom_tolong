@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_062941) do
+ActiveRecord::Schema.define(version: 2020_04_13_060903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_062941) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "help_type"
+    t.string "help_needed"
   end
 
   create_table "states", force: :cascade do |t|
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_062941) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "verified", default: false
   end
 
   add_foreign_key "helps", "districts"

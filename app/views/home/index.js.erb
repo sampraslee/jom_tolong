@@ -1,0 +1,16 @@
+var help_partial = document.getElementById('helps-partial');
+
+help_partial.innerHTML = "<%= j (render partial: 'helps') %>";
+
+var swiper1 = new Swiper('.swiper1', {
+	direction: 'horizontal',
+	loop: 'true',
+	centeredSlides: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+	pagination: {
+		el: '.swiper-pagination'
+	}
+});

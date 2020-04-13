@@ -1,3 +1,218 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#hero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 40vh;
+	text-align: center;
+	background-color: rgba(186, 232, 232, 0.95);
+	background-image: url(/assets/hero-img.jpg);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+
+	.hero-copy {
+		line-height: 1.3;
+
+		.heading {
+			font-weight: bold;
+		}
+	}
+
+	.hero-links {
+		margin-top: 2em;
+		.primary {
+			margin-right: 1em;
+		}
+	}
+
+	.photo-credit {
+		font-size: 0.5rem;
+		font-style: italic;
+		margin-top: 1rem;
+	}
+}
+
+#filter {
+	background-color: var(--bg);
+	padding: 1.2em;
+
+	.subheading {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	form {
+		background-color: var(--card-bg);
+		padding: 1em;
+		border-radius: var(--border-radius);
+		box-shadow: 5px 5px 10px #e0e0e0;
+		label {
+			display: inline;
+			margin-right: 1.2em;
+		}
+		select {
+			background-color: var(--bg);
+		}
+		.with,
+		.area {
+			text-align: center;
+			label {
+				color: var(--card-headline-color);
+			}
+		}
+		.with {
+			margin-bottom: 1em;
+		}
+		#helps_search,
+		#districts_search {
+			width: 60%;
+		}
+	}
+}
+
+#help-section {
+	height: 80vh;
+
+	#helps-partial {
+		height: 90%;
+
+		.swiper-container {
+			height: 95%;
+		}
+	}
+}
+
+#help-section,
+#initiatives {
+	margin-top: 1rem;
+
+	.subheading {
+		margin-left: 2em;
+		margin-bottom: 1em;
+	}
+
+	.card {
+		width: 85%;
+		height: max-content;
+		padding: 1.5em;
+		margin: 0 auto;
+		background: var(--card-bg);
+		border-radius: 5px;
+		box-shadow: 5px 5px 10px #e0e0e0;
+
+		.card-text {
+			.card-heading {
+				font-size: var(--card-heading);
+				font-weight: bold;
+				color: var(--card-headline-color);
+			}
+			.tag {
+				display: inline-block;
+				padding: 5px 10px;
+				margin: 0.75em 0;
+				background-color: #bae8e8;
+				border-radius: var(--border-radius);
+			}
+			.card-subheading {
+				color: var(--card-highlight);
+				font-weight: bold;
+			}
+			.card-paragraph {
+				color: var(--card-paragraph-color);
+				margin: 0.75em 0;
+			}
+		}
+		.card-link {
+			display: block;
+			padding: 0.75em 2em;
+			text-align: center;
+			border-radius: var(--border-radius);
+			color: var(--card-heading-color);
+			background-color: var(--cta-color);
+			font-weight: bold;
+		}
+	}
+
+	.swiper-container {
+		display: grid;
+		grid-template-rows: 1fr 50px;
+
+		.swiper-wrapper {
+			grid-row: 1/2;
+		}
+		.swiper-button-prev,
+		.swiper-button-next,
+		.swiper-pagination {
+			grid-row: 2/-1;
+		}
+	}
+}
+
+@media screen and (min-width: 600px) {
+	#help-section,
+	#initiatives {
+		.card {
+			height: 55%;
+		}
+		.swiper-button-prev,
+		.swiper-button-next {
+			top: 65% !important;
+		}
+		.swiper-pagination {
+			bottom: 34% !important;
+		}
+	}
+}
+@media screen and (min-width: 767px) {
+	#help-section,
+	#initiatives {
+		height: 52vh;
+
+		.card {
+			width: 290px;
+			height: min-content;
+		}
+		.swiper-button-prev,
+		.swiper-button-next {
+			top: 25% !important;
+		}
+		.swiper-pagination {
+			bottom: 50% !important;
+		}
+	}
+}
+@media screen and (min-width: 992px) {
+	#hero {
+		height: 25vh;
+	}
+
+	#help-section,
+	#initiatives {
+		height: 35vh;
+
+		.card {
+			width: 290px;
+			height: min-content;
+		}
+		.swiper-button-prev,
+		.swiper-button-next {
+			top: 42% !important;
+		}
+		.swiper-pagination {
+			bottom: 35% !important;
+		}
+	}
+}
+@media screen and (min-width: 1200px) {
+	#hero {
+		height: 45vh;
+	}
+	#help-section,
+	#initiatives {
+		height: 75vh;
+	}
+}

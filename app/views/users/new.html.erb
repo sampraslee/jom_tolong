@@ -1,21 +1,39 @@
-<h3>Fill in your information</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="/assets/logo.png" alt="logo" class="logo">
+    </header>
 
-<%= form_with model: @user do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <br>
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
-    <br>
-    <%= form.fields_for :helps do |help_form| %>
-        <%= help_form.label :district_id %>
-        <%= help_form.grouped_collection_select :district_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+
+    <%= form_with model: @user do |form| %>
+        <h3>Fill in your information</h3>
+        <p>Your problem will be posted, anyone who wants to help you will be able to contact you directly via Whatsapp.</p>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
         <br>
-        <%= help_form.label 'What kind of help do you need?' %>
-        <%= help_form.select :help_type, options_for_select(Help.help_types.keys), include_blank: true %>
+        <%= form.label :phone_number %>
+        <%= form.text_field :phone_number %>
         <br>
-        <%= help_form.label 'Describe' %>
-        <%= help_form.text_area :description %>
+        <%= form.fields_for :helps do |help_form| %>
+            <%= help_form.label :district_id %>
+            <%= help_form.grouped_collection_select :district_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
+            <br>
+            <%= help_form.label 'What kind of help do you need?' %>
+            <%= help_form.select :help_type, options_for_select(Help.help_types.keys), include_blank: true %>
+            <br>
+            <%= help_form.label 'Describe' %>
+            <%= help_form.text_area :description %>
+        <% end %>
+        <%= form.submit 'Post' %>
     <% end %>
-    <%= form.submit 'Post' %>
-<% end %>
+    <footer>
+        <img src="/assets/logo.png" alt="logo" class="logo">
+    </footer>
+</body>
+</html>

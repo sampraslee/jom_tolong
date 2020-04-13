@@ -13,7 +13,32 @@
  *= require_tree .
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+
+/* Variables */
+:root {
+	/* Colors */
+	--cta-color: #ffd803;
+	--bg-2: #bae8e8;
+	--bg: #fffffe;
+	--text-color: #272343;
+	--paragraph-color: #2d334a;
+	--card-headline-color: #fffffe;
+	--card-paragraph-color: #fffffe;
+	--card-highlight: #bae8e8;
+	--card-bg: #272343;
+	/* Fonts */
+	--heading: 32px;
+	--subheading: 18px;
+	--paragraph: 16px;
+	--card-heading: 1.6rem;
+	--card-subheading: 16px;
+	--card-paragraph: 1.1rem;
+	/* Measurements */
+	--border-radius: 5px;
+}
+
 /* CSS reset */
 *,
 *::before,
@@ -23,7 +48,9 @@
 
 body,
 h1,
+h2,
 h3,
+label,
 p {
 	margin: 0;
 }
@@ -31,26 +58,74 @@ p {
 body {
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
-	font-family: 'Roboto', sans-serif;
-	background: #fffffe;
+	letter-spacing: 0.75px;
+	font-family: 'Asap', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
+	background: var(--bg);
 }
 
-/* Cards */
-.card {
-	width: 300px;
-	height: 300px;
-	margin-bottom: 1em;
-	padding: 1.2em;
-	background: #ffff;
-	border-radius: 5px;
-	box-shadow: 5px 5px 10px #e0e0e0, -5px -5px 10px #ffffff;
-}
-
-.card-link {
+a {
 	text-decoration: none;
-	color: #272343;
-	background: #ffd803;
-	padding: 0.5em 0.75em;
-	margin-top: 0.5rem;
+}
+
+button {
+	font-family: inherit;
+}
+
+.heading {
+	font-size: var(--heading);
+}
+.subheading {
+	font-size: var(--subheading);
+}
+.paragraph {
+	font-size: var(--paragraph);
+}
+
+/* Navbar */
+header,
+footer {
+	height: 60px;
+	display: flex;
+	justify-content: center;
+}
+
+.logo {
+	height: inherit;
+	width: auto;
+}
+/* Buttons */
+.primary,
+.secondary {
+	font: inherit;
+	color: var(--text-color);
+	padding: 0.7rem;
 	border-radius: 5px;
+}
+.primary {
+	background-color: var(--cta-color);
+}
+.secondary {
+	background: rgba(15, 14, 26, 50%);
+	border: 1px solid var(--yellow);
+}
+
+/* Media Queries */
+@media (min-width: 360px) {
+	:root {
+		--heading: 40px;
+	}
+}
+
+@media (min-width: 768px) {
+	:root {
+		--heading: 65px;
+		--subheading: 32px;
+		--paragraph: 20px;
+	}
+
+	.primary,
+	.secondary {
+		padding: 1em;
+	}
 }
