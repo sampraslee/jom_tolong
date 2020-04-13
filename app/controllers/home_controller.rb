@@ -12,6 +12,7 @@ class HomeController < ApplicationController
         end
 
         @initiatives = Initiative.all
+        @states = State.all
     end
     
 end
