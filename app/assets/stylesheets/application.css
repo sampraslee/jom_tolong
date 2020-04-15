@@ -56,7 +56,7 @@ p {
 }
 
 body {
-	text-rendering: optimizeSpeed;
+	/* text-rendering: optimizeSpeed; */
 	line-height: 1.5;
 	letter-spacing: 0.75px;
 	font-family: 'Asap', sans-serif;
