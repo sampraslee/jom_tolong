@@ -11,7 +11,19 @@
   </head>
 
   <body>
+    <header>
+      <div class="logo">
+        <%= image_tag 'logo.png' %>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <div class="logo">
+        <%= image_tag 'logo.png' %>
+      </div>
+    </footer>
 
     <%= javascript_include_tag 'https://unpkg.com/swiper/js/swiper.min.js' %>
     <script>

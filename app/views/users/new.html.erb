@@ -6,11 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <img src="/assets/logo.png" alt="logo" class="logo">
-    </header>
-
-
     <%= form_with model: @user do |form| %>
         <h3>Fill in your information</h3>
         <p>Your problem will be posted, anyone who wants to help you will be able to contact you directly via Whatsapp.</p>
@@ -32,8 +27,5 @@
         <% end %>
         <%= form.submit 'Post' %>
     <% end %>
-    <footer>
-        <img src="/assets/logo.png" alt="logo" class="logo">
-    </footer>
 </body>
 </html>
