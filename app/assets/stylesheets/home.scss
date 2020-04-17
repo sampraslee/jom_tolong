@@ -75,8 +75,6 @@
 }
 
 #help-section {
-	height: 80vh;
-
 	#helps-partial {
 		height: 90%;
 
@@ -89,6 +87,7 @@
 #help-section,
 #initiatives {
 	margin-top: 1rem;
+	height: auto;
 
 	.subheading {
 		margin-left: 2em;
@@ -143,6 +142,7 @@
 
 		.swiper-wrapper {
 			grid-row: 1/2;
+			margin-bottom: 0.75em;
 		}
 		.swiper-button-prev,
 		.swiper-button-next,
