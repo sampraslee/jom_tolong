@@ -1,6 +1,4 @@
-class UsersController < ApplicationController
-  include Verify
-  
+class UsersController < ApplicationController  
     def new
        @user = User.new
        @user.helps.new
@@ -8,8 +6,7 @@ class UsersController < ApplicationController
 
     def create
       @user = User.create!(user_params)
-      if valid_phone_number?(+60,user_params['phone_number'])
-        @user.save
+      if @user.save
         session[:user_id] = @user.id
         redirect_to edit_user_path(@user.id)
       else
@@ -27,13 +24,12 @@ class UsersController < ApplicationController
     
     def update
       @user = current_user
-      if valid_confirmation_code?(code_params["code"], +60, @user.phone_number)
+      if @user.valid_confirmation_code?(code_params["code"], +60, @user.phone_number)
         @user.update(verified: true)
         puts 'Your number is verified!'
         redirect_to root_path
       else
-        render 'show'
-        puts 'sketchers'
+        render 'edit'
       end
     end
     
