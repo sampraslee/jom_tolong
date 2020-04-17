@@ -30,6 +30,7 @@
         var swiper1 = new Swiper ('.swiper1', {
             direction: 'horizontal',
             loop: 'false',
+            centeredSlides: 'true',
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -38,6 +39,14 @@
 		          el: '.swiper-pagination'
             },
             breakpoints: {
+              500: {
+                slidesPerView: 2,
+                spaceBetween: 140
+              },
+              575: {
+                slidesPerView: 2,
+                spaceBetween: 100
+              },
               767: {
                 slidesPerView: 3,
                 spaceBetween: 200
@@ -56,6 +65,7 @@
         var swiper2 = new Swiper ('.swiper2', {
             direction: 'horizontal',
             loop: 'false',
+            centeredSlides: 'true',
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -64,6 +74,14 @@
 		          el: '.swiper-pagination'
             },
             breakpoints: {
+              500: {
+                slidesPerView: 2,
+                spaceBetween: 140
+              },
+              575: {
+                slidesPerView: 2,
+                spaceBetween: 100
+              },
               767: {
                 slidesPerView: 3,
                 spaceBetween: 200
