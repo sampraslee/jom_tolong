@@ -29,7 +29,7 @@
 	--card-highlight: #bae8e8;
 	--card-bg: #272343;
 	/* Fonts */
-	--heading: 32px;
+	--heading: 7vw;
 	--subheading: 18px;
 	--paragraph: 16px;
 	--card-heading: 1.6rem;
@@ -111,16 +111,16 @@ footer {
 }
 
 /* Media Queries */
-@media (min-width: 360px) {
+/* @media (min-width: 360px) {
 	:root {
 		--heading: 40px;
 	}
-}
+} */
 
 @media (min-width: 768px) {
 	:root {
-		--heading: 65px;
-		--subheading: 32px;
+		/* --heading: 65px; */
+		--subheading: 28px;
 		--paragraph: 20px;
 	}
 
