@@ -95,8 +95,8 @@
 	}
 
 	.card {
-		width: 85%;
-		height: max-content;
+		width: 290px;
+		height: auto;
 		padding: 1.5em;
 		margin: 0 auto;
 		background: var(--card-bg);
@@ -152,36 +152,14 @@
 	}
 }
 
-@media screen and (min-width: 600px) {
-	#help-section,
-	#initiatives {
-		.card {
-			height: 55%;
-		}
-		.swiper-button-prev,
-		.swiper-button-next {
-			top: 65% !important;
-		}
-		.swiper-pagination {
-			bottom: 34% !important;
-		}
-	}
-}
 @media screen and (min-width: 767px) {
 	#help-section,
 	#initiatives {
-		height: 52vh;
-
-		.card {
-			width: 290px;
-			height: min-content;
+		.swiper-button-prev {
+			left: 130px !important;
 		}
-		.swiper-button-prev,
 		.swiper-button-next {
-			top: 25% !important;
-		}
-		.swiper-pagination {
-			bottom: 50% !important;
+			right: 130px !important;
 		}
 	}
 }
@@ -189,30 +167,9 @@
 	#hero {
 		height: 25vh;
 	}
-
-	#help-section,
-	#initiatives {
-		height: 35vh;
-
-		.card {
-			width: 290px;
-			height: min-content;
-		}
-		.swiper-button-prev,
-		.swiper-button-next {
-			top: 42% !important;
-		}
-		.swiper-pagination {
-			bottom: 35% !important;
-		}
-	}
 }
 @media screen and (min-width: 1200px) {
 	#hero {
 		height: 45vh;
-	}
-	#help-section,
-	#initiatives {
-		height: 75vh;
 	}
 }
