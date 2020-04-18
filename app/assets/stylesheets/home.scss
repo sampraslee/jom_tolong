@@ -77,7 +77,17 @@
 #help-section {
 	#helps-partial {
 		height: 90%;
+		.no-results-msg {
+			text-align: center;
+			padding: 2em;
+			margin: 0 2em 1em 2em;
+			border-radius: var(--border-radius);
+			background-color: #e3f6f5;
 
+			a:hover {
+				text-decoration: underline;
+			}
+		}
 		.swiper-container {
 			height: 95%;
 		}
@@ -86,7 +96,6 @@
 
 #help-section,
 #initiatives {
-	margin-top: 1rem;
 	height: auto;
 
 	.subheading {
@@ -155,11 +164,12 @@
 @media screen and (min-width: 767px) {
 	#help-section,
 	#initiatives {
+		padding: 1.5em 0;
 		.swiper-button-prev {
-			left: 130px !important;
+			left: 70px !important;
 		}
 		.swiper-button-next {
-			right: 130px !important;
+			right: 70px !important;
 		}
 	}
 }
