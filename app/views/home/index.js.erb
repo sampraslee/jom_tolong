@@ -1,16 +1,44 @@
 var help_partial = document.getElementById('helps-partial');
 
-help_partial.innerHTML = "<%= j (render partial: 'helps') %>";
 
-var swiper1 = new Swiper('.swiper1', {
-	direction: 'horizontal',
-	loop: 'true',
-	centeredSlides: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	},
-	pagination: {
-		el: '.swiper-pagination'
-	}
-});
+<% if @helps.blank? %>
+	help_partial.innerHTML = "<%= j (render partial: 'flash_msg') %>";
+<% else %>
+	help_partial.innerHTML = "<%= j (render partial: 'helps') %>";
+<% end %>
+
+
+var swiper1 = new Swiper ('.swiper1', {
+            direction: 'horizontal',
+            loop: 'false',
+            centeredSlides: 'true',
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+		          el: '.swiper-pagination'
+            },
+            breakpoints: {
+              500: {
+                slidesPerView: 2,
+                spaceBetween: 140
+              },
+              575: {
+                slidesPerView: 2,
+                spaceBetween: 100
+              },
+              767: {
+                slidesPerView: 3,
+                spaceBetween: 200
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 245
+              },
+              1200: {
+                slidesPerView: 5,
+                spaceBetween: 270
+              }
+            }
+        })

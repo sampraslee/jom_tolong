@@ -37,7 +37,11 @@
     <section id="help-section">
         <h2 class='subheading'>People who need your help...</h2>
         <div id="helps-partial">
-            <%= render partial: 'helps' %>
+            <% if @helps.blank? %>
+                <%= render partial: 'flash_msg' %>
+            <% else %> 
+                <%= render partial: 'helps' %>
+            <% end %>
         </div>
     </section>
 
