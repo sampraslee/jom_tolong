@@ -15,12 +15,14 @@ function filterArea() {
 	for (let i = 0; i < areasStates.length; i++) {
 		const areaState = areasStates[i];
 		console.log(areaState);
-		// 3. check if the selected state equals to any state in the areas field
-		if (selectedState === areaState.attributes.label.value) {
+		// 3. check if the selected state equals to any states in the areas field
+		if (selectedState != areaState.attributes.label.value) {
 			console.log(selectedState === areaState.attributes.label.value);
-
-			// 4. Get the areas associated with the states
-			areas_field.innerHTML = areaState.innerHTML;
+			// 4. if not equal, set the optgroup hidden property to true
+			areaState.hidden = true;
+		} else {
+			// 5. if equal, unhide
+			areaState.hidden = false;
 		}
 	}
 }
