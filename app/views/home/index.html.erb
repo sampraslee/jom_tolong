@@ -24,7 +24,10 @@
                 <%= form.label 'with', class: 'paragraph' %>
                 <%= form.select :helps_search, options_for_select(Help.help_types.keys), include_blank: true %>
             </div>
-
+            <div class="state">
+                <%= form.label 'state', class: 'paragraph' %>
+                <%= form.collection_select :state_search, State.order(:name), :name, :name, include_blank: true %>
+            </div>
             <div class="area">
                 <%= form.label 'area', class: 'paragraph' %>
                 <%= form.grouped_collection_select :districts_search, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
@@ -51,5 +54,7 @@
             <%= render partial: 'initiatives' %>
         </div>
     </section>
+
+    <%= javascript_pack_tag 'home' %>
 </body>
 </html>

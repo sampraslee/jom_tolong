@@ -58,16 +58,19 @@
 			background-color: var(--bg);
 		}
 		.with,
+		.state,
 		.area {
 			text-align: center;
 			label {
 				color: var(--card-headline-color);
 			}
 		}
-		.with {
+		.with,
+		.state {
 			margin-bottom: 1em;
 		}
 		#helps_search,
+		#state_search,
 		#districts_search {
 			width: 60%;
 		}
@@ -171,8 +174,9 @@
 		form {
 			padding: 1.5em 2em;
 
-			#helps-search,
-			#districts-search {
+			#helps_search,
+			#state_search,
+			#districts_search {
 				width: 80%;
 			}
 		}
@@ -183,11 +187,6 @@
 		form {
 			width: 550px;
 			padding: 1.5em 2em;
-
-			#helps-search,
-			#districts-search {
-				width: 80%;
-			}
 		}
 	}
 
