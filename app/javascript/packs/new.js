@@ -19,10 +19,12 @@ function filterArea() {
 		if (selectedState != areaState.attributes.label.value) {
 			console.log(selectedState === areaState.attributes.label.value);
 			// 4. if not equal, set the optgroup hidden property to true
-			areaState.hidden = true;
+			areaState.disabled = true;
+			console.log(areaState.disabled);
 		} else {
 			// 5. if equal, unhide
-			areaState.hidden = false;
+			areaState.disabled = false;
+			console.log(areaState.disabled);
 		}
 	}
 }
