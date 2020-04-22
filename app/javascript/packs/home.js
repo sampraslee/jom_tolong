@@ -15,9 +15,11 @@ function filterArea() {
 		console.log(areaState);
 		if (selectedState != areaState.attributes.label.value) {
 			console.log(selectedState === areaState.attributes.label.value);
-			areaState.hidden = true;
+			areaState.disabled = true;
+			console.log(areaState.disabled);
 		} else {
-			areaState.hidden = false;
+			areaState.disabled = false;
+			console.log(areaState.disabled);
 		}
 	}
 }

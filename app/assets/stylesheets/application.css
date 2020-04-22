@@ -111,6 +111,9 @@ footer {
 	border: 1px solid var(--yellow);
 }
 
+optgroup:disabled {
+	display: none;
+}
 /* Media Queries */
 @media (min-width: 768px) {
 	:root {
