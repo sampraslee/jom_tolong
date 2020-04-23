@@ -30,10 +30,10 @@
 	--card-bg: #272343;
 	/* Fonts */
 	--heading: 7vw;
-	--subheading: 18px;
-	--paragraph: 16px;
+	--subheading: 1.125rem;
+	--paragraph: 1rem;
 	--card-heading: 1.6rem;
-	--card-subheading: 16px;
+	--card-subheading: 1rem;
 	--card-paragraph: 1.1rem;
 	/* Measurements */
 	--border-radius: 5px;
