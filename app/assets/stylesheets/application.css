@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
-/* Variables */
+@import "/node_modules/tabler-icons/iconfont/tabler-icons.min.css";
+
 :root {
 	/* Colors */
 	--cta-color: #ffd803;
