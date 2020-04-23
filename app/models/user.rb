@@ -12,7 +12,7 @@ class User < ApplicationRecord
     private 
 
     def valid_phone_number?
-        response = Authy::PhoneVerification.start(country_code: +60, phone_number: self.phone_number)
+        response = Authy::PhoneVerification.start(country_code: +6, phone_number: self.phone_number)
         response.success?
     end
 end
