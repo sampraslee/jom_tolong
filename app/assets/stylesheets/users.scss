@@ -4,7 +4,7 @@
 
 // new.html.erb
 form {
-	padding: 1em;
+	padding: 2.3em;
 	label {
 		display: block;
 		width: 100%;
@@ -15,6 +15,7 @@ form {
 	input[type=text],
 	textarea,
 	select {
+		font-size: var(--paragraph);
 		width: 100%;
 		border-radius: 5px;
 		padding: 1em;
@@ -37,21 +38,28 @@ form {
 		border-radius: var(--border-radius);
 		background-color: var(--cta-color);
 		font-weight: bold;
-		font-size: 1.1rem;
+		font-size: var(--paragraph);
 		cursor: pointer;
 	}
 
 	select {
 		font-family: inherit;
-		font-size: inherit;
+		font-size: var(--paragraph);
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		-ms-appearance: none;
 		background: url("tabler-icons/icons/chevron-down.svg");
 		background-repeat: no-repeat;
-		background-size: 16px 17px;
+		background-size: 20px 21px;
 		background-position: right;
 		background-origin: content-box;
+	}
+}
+
+// Media Queries
+@media screen and (min-width: 992px) {
+	form {
+		padding: 3.5em;
 	}
 }

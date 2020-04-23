@@ -7,29 +7,29 @@
 </head>
 <body>
     <%= form_with model: @user do |form| %>
-        <h3>Fill in your information</h3>
-        <p>Your request will be posted, anyone who wants to help you will be able to contact you directly via Whatsapp.</p>
-        <%= form.label :name %>
+        <h3 class='subheading'>Fill in your information</h3>
+        <p class='paragraph'>Your request will be posted, anyone who wants to help you will be able to contact you directly via Whatsapp.</p>
+        <%= form.label :name, class: 'paragraph' %>
         <%= form.text_field :name %>
         <br>
-        <%= form.label :phone_number %>
+        <%= form.label :phone_number, class: 'paragraph' %>
         <%= form.text_field :phone_number %>
         <br>
         <%= form.fields_for :helps do |help_form| %>
             <%= help_form.fields_for :districts do |f| %>
-                <%= f.label :state %>
+                <%= f.label :state, class: 'paragraph' %>
                 <%= f.collection_select :state_id, State.order(:name), :name, :name, include_blank: true %>
             <% end %>
-            <%= help_form.label :district_id %>
+            <%= help_form.label :district_id, class: 'paragraph' %>
             <%= help_form.grouped_collection_select :district_id, State.order(:name), :districts, :name, :id, :name, include_blank: true %>
             <br>
-            <%= help_form.label 'What kind of help do you need?' %>
+            <%= help_form.label 'What kind of help do you need?', class: 'paragraph' %>
             <%= help_form.select :help_type, options_for_select(Help.help_types.keys), include_blank: true %>
             <br>
-            <%= help_form.label 'Describe' %>
+            <%= help_form.label 'Describe', class: 'paragraph' %>
             <%= help_form.text_area :description %>
         <% end %>
-        <%= form.submit 'Post' %>
+        <%= form.submit 'Post', class: "primary paragraph" %>
     <% end %>
 
     <%= javascript_pack_tag 'new' %>
