@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
     def create
       @user = User.create!(user_params)
-      if @user.save
+      if @user.valid_phone_number?
+        @user.save
         session[:user_id] = @user.id
         redirect_to edit_user_path(@user.id)
       else
